@@ -1,69 +1,109 @@
-# React + TypeScript + Vite
+# TurkWise Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React application built with Vite, TypeScript, and the latest React 19.
 
-Currently, two official plugins are available:
+## 🚀 Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Latest React version with new features
+- **TypeScript** - Static typing for code reliability
+- **Vite** - Fast bundling and development
+- **React Router DOM** - Client-side routing
+- **Biome** - Modern linter and formatter
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd turkwise-test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+## 🛠️ Development Commands
+
+### Development
+```bash
+npm run dev
+```
+Starts the development server at `http://localhost:5173`
+
+### Build
+```bash
+npm run build
+```
+Creates an optimized production build
+
+### Preview
+```bash
+npm run preview
+```
+Local preview of the production build
+
+### Linting and Formatting
+```bash
+npm run lint      # Check code quality
+npm run format    # Format code
+```
+
+## 📁 Project Structure
+
+```
+turkwise-test/
+├── public/           # Static files
+├── src/
+│   ├── components/   # React components
+│   ├── pages/        # Application pages
+│   ├── hooks/        # Custom hooks
+│   ├── utils/        # Utilities
+│   ├── types/        # TypeScript types
+│   ├── App.tsx       # Main component
+│   └── main.tsx      # Entry point
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── biome.json
+```
+
+## 🔧 Configuration
+
+### TypeScript
+The project uses strict TypeScript configuration to ensure code quality.
+
+### Biome
+Used for linting and code formatting. Configuration is in `biome.json`.
+
+### Vite
+Bundler configuration in `vite.config.ts` with React and TypeScript support.
+
+## 🚀 Deployment
+
+After building (`npm run build`), deployment-ready files are in the `dist/` folder.
+
+Can be deployed to any static hosting service:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3
+
+## 🤝 Development
+
+1. Follow TypeScript principles
+2. Use functional components with hooks
+3. Run linter before committing
+4. Write typed code
+
+## 📄 License
+
+This project is private.
+
+## 🔗 Useful Links
+
+- [React 19 Documentation](https://react.dev/)
+- [Vite Documentation](https://vitejs.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
+- [React Router Documentation](https://reactrouter.com/)
+- [Biome Documentation](https://biomejs.dev/)
