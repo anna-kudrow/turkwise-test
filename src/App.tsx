@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/noLabelWithoutControl: <explanation> */
 import { Link } from "react-router-dom";
 import "./App.css";
 
@@ -37,26 +38,26 @@ function App() {
           <nav>
             <div className="nav-section">
               <div className="nav-title">Ana Menü</div>
-              <Link to="#" className="nav-item">
+              <Link to="/" className="nav-item">
                 <i className="fas fa-home"></i>
                 Ana Sayfa
               </Link>
             </div>
             <div className="nav-section">
               <div className="nav-title">AI Yönetimi</div>
-              <Link to="#" className="nav-item">
+              <Link to="/ai-management" className="nav-item">
                 <i className="fas fa-robot"></i>
                 AI Yönetimi
               </Link>
-              <Link to="#" className="nav-item active">
+              <Link to="/inventory" className="nav-item active">
                 <i className="fas fa-boxes"></i>
                 Envanter
               </Link>
-              <Link to="#" className="nav-item">
+              <Link to="/performance" className="nav-item">
                 <i className="fas fa-chart-bar"></i>
                 Ürün Performansı
               </Link>
-              <Link to="#" className="nav-item">
+              <Link to="/optimization" className="nav-item">
                 <i className="fas fa-cog"></i>
                 AI Optimizasyon
               </Link>
@@ -88,7 +89,7 @@ function App() {
           </nav>
         </aside>
         {/* <!-- Mobile Menu Button --> */}
-        <button className="mobile-menu-btn">
+        <button className="mobile-menu-btn" type="button">
           <i className="fas fa-bars"></i>
         </button>
         {/* <!-- Main Content --> */}
@@ -125,18 +126,18 @@ function App() {
                     AI Zekanız: Her veri girişi AI'yı daha akıllı yapıyor!
                   </div>
                 </div>
-                <button className="theme-toggle">
+                <button type="button" className="theme-toggle">
                   <i className="fas fa-moon" id="themeIcon"></i>
                 </button>
-                <button className="btn btn-secondary">
+                <button className="btn btn-secondary" type="button">
                   <i className="fas fa-download"></i>
                   Dışa Aktar
                 </button>
-                <button className="btn btn-secondary">
+                <button className="btn btn-secondary" type="button">
                   <i className="fas fa-upload"></i>
                   İçe Aktar
                 </button>
-                <button className="btn btn-primary">
+                <button className="btn btn-primary" type="button">
                   <i className="fas fa-plus"></i>
                   Ürün Ekle
                 </button>
@@ -198,7 +199,7 @@ function App() {
                 </div>
                 AI İçerik Zekası & Doluluk Analizi
               </div>
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" type="button">
                 <i className="fas fa-chart-pie"></i>
                 Detaylı Rapor
               </button>
@@ -206,7 +207,7 @@ function App() {
             <div className="completion-stats">
               <div
                 className="stat-item"
-                onclick="openHelpModal('urun-aciklama')"
+                // onclick="openHelpModal('urun-aciklama')"
               >
                 <div className="stat-help-icon">
                   <i className="fas fa-question"></i>
@@ -226,7 +227,7 @@ function App() {
               </div>
               <div
                 className="stat-item"
-                onclick="openHelpModal('gorsel-optimizasyon')"
+                // onclick="openHelpModal('gorsel-optimizasyon')"
               >
                 <div className="stat-help-icon">
                   <i className="fas fa-question"></i>
@@ -246,7 +247,7 @@ function App() {
               </div>
               <div
                 className="stat-item"
-                onclick="openHelpModal('seo-optimizasyon')"
+                // onclick="openHelpModal('seo-optimizasyon')"
               >
                 <div className="stat-help-icon">
                   <i className="fas fa-question"></i>
@@ -266,7 +267,7 @@ function App() {
               </div>
               <div
                 className="stat-item"
-                onclick="openHelpModal('kategori-ozellikleri')"
+                // onclick="openHelpModal('kategori-ozellikleri')"
               >
                 <div className="stat-help-icon">
                   <i className="fas fa-question"></i>
@@ -286,7 +287,7 @@ function App() {
               </div>
               <div
                 className="stat-item"
-                onclick="openHelpModal('fiyat-optimizasyon')"
+                // onclick="openHelpModal('fiyat-optimizasyon')"
               >
                 <div className="stat-help-icon">
                   <i className="fas fa-question"></i>
@@ -306,7 +307,7 @@ function App() {
               </div>
               <div
                 className="stat-item"
-                onclick="openHelpModal('genel-ai-skor')"
+                // onclick="openHelpModal('genel-ai-skor')"
               >
                 <div className="stat-help-icon">
                   <i className="fas fa-question"></i>
@@ -333,7 +334,11 @@ function App() {
                 <i className="fas fa-filter"></i>
                 Gelişmiş Filtreleme Sistemi
               </div>
-              <button className="filter-toggle" onclick="toggleFilters()">
+              <button
+                className="filter-toggle"
+                type="button"
+                // onclick="toggleFilters()"
+              >
                 <i className="fas fa-chevron-up"></i>
               </button>
             </div>
@@ -512,7 +517,8 @@ function App() {
                   <div className="column-selector">
                     <button
                       className="column-btn"
-                      onclick="toggleColumnSelector()"
+                      type="button"
+                      // onclick="toggleColumnSelector()"
                     >
                       <i className="fas fa-columns"></i>
                       Sütunları Özelleştir
@@ -704,14 +710,15 @@ function App() {
                         <div className="action-buttons">
                           <button
                             className="action-btn btn-revenue-boost"
-                            onclick="openRevenueBoostModal('TSH-OVR-001-WHT-L')"
+                            type="button"
+                            // onclick="openRevenueBoostModal('TSH-OVR-001-WHT-L')"
                           >
                             <i className="fas fa-coins"></i>
                             <div className="action-tooltip">
                               +67₺ Gelir Artışı!
                             </div>
                           </button>
-                          <button className="action-btn btn-view">
+                          <button className="action-btn btn-view" type="button">
                             <i className="fas fa-eye"></i>
                             <div className="action-tooltip">
                               Ürünü Görüntüle
@@ -719,7 +726,8 @@ function App() {
                           </button>
                           <button
                             className="action-btn btn-properties"
-                            onclick="openPropertiesModal('moda', 'TSH-OVR-001-WHT-L')"
+                            type="button"
+                            // onclick="openPropertiesModal('moda', 'TSH-OVR-001-WHT-L')"
                           >
                             <i className="fas fa-cog"></i>
                             <div className="action-tooltip">
@@ -731,7 +739,7 @@ function App() {
                     </tr>
                     {/* Product Variants Row */}
                     <tr className="product-variants" id="variants-product-1">
-                      <td colspan="8">
+                      <td colSpan={8}>
                         <div className="variant-item">
                           <img
                             src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=32&h=32&fit=crop&crop=center"
@@ -838,14 +846,15 @@ function App() {
                         <div className="action-buttons">
                           <button
                             className="action-btn btn-revenue-boost"
-                            onclick="openRevenueBoostModal('IPH-15PM-256-TIT')"
+                            type="button"
+                            // onclick="openRevenueBoostModal('IPH-15PM-256-TIT')"
                           >
                             <i className="fas fa-coins"></i>
                             <div className="action-tooltip">
                               +23₺ Gelir Artışı!
                             </div>
                           </button>
-                          <button className="action-btn btn-view">
+                          <button className="action-btn btn-view" type="button">
                             <i className="fas fa-eye"></i>
                             <div className="action-tooltip">
                               Ürünü Görüntüle
@@ -853,7 +862,8 @@ function App() {
                           </button>
                           <button
                             className="action-btn btn-properties"
-                            onclick="openPropertiesModal('elektronik', 'IPH-15PM-256-TIT')"
+                            type="button"
+                            // onclick="openPropertiesModal('elektronik', 'IPH-15PM-256-TIT')"
                           >
                             <i className="fas fa-cog"></i>
                             <div className="action-tooltip">
@@ -865,7 +875,7 @@ function App() {
                     </tr>
                     {/* <!-- Variants for iPhone --> */}
                     <tr className="product-variants" id="variants-product-2">
-                      <td colspan="8">
+                      <td colSpan={8}>
                         <div className="variant-item">
                           <img
                             src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=32&h=32&fit=crop&crop=center"
@@ -973,8 +983,9 @@ function App() {
                       <td>
                         <div className="action-buttons">
                           <button
+                            type="button"
                             className="action-btn btn-revenue-boost"
-                            onclick="openRevenueBoostModal('COS-HYA-30-001')"
+                            // onclick="openRevenueBoostModal('COS-HYA-30-001')"
                             style={{ background: "var(--error-color)" }}
                           >
                             <i className="fas fa-exclamation-triangle"></i>
@@ -982,7 +993,7 @@ function App() {
                               Kritik Bilgi Eksik!
                             </div>
                           </button>
-                          <button className="action-btn btn-view">
+                          <button className="action-btn btn-view" type="button">
                             <i className="fas fa-eye"></i>
                             <div className="action-tooltip">
                               Ürünü Görüntüle
@@ -990,7 +1001,8 @@ function App() {
                           </button>
                           <button
                             className="action-btn btn-properties"
-                            onclick="openPropertiesModal('kozmetik', 'COS-HYA-30-001')"
+                            type="button"
+                            // onclick="openPropertiesModal('kozmetik', 'COS-HYA-30-001')"
                           >
                             <i className="fas fa-cog"></i>
                             <div className="action-tooltip">
@@ -1002,7 +1014,7 @@ function App() {
                     </tr>
                     {/* <!-- Variants for Kozmetik --> */}
                     <tr className="product-variants" id="variants-product-3">
-                      <td colspan="8">
+                      <td colSpan={8}>
                         <div className="variant-item">
                           <img
                             src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=32&h=32&fit=crop&crop=center"
@@ -1094,7 +1106,7 @@ function App() {
                       </td>
                       <td>
                         <div className="action-buttons">
-                          <button className="action-btn btn-view">
+                          <button className="action-btn btn-view" type="button">
                             <i className="fas fa-eye"></i>
                             <div className="action-tooltip">
                               Ürünü Görüntüle
@@ -1102,7 +1114,8 @@ function App() {
                           </button>
                           <button
                             className="action-btn btn-properties"
-                            onclick="openPropertiesModal('spor', 'SPT-YG-MAT-6MM')"
+                            type="button"
+                            // onclick="openPropertiesModal('spor', 'SPT-YG-MAT-6MM')"
                           >
                             <i className="fas fa-cog"></i>
                             <div className="action-tooltip">
@@ -1114,7 +1127,7 @@ function App() {
                     </tr>
                     {/* <!-- Variants for Spor --> */}
                     <tr className="product-variants" id="variants-product-4">
-                      <td colspan="8">
+                      <td colSpan={8}>
                         <div className="variant-item">
                           <img
                             src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=32&h=32&fit=crop&crop=center"
@@ -1148,21 +1161,33 @@ function App() {
                   <strong>2.847</strong> ürün)
                 </div>
                 <div className="pagination-controls">
-                  <button className="page-btn" disabled>
+                  <button className="page-btn" type="button" disabled>
                     <i className="fas fa-chevron-left"></i>
                   </button>
-                  <button className="page-btn active">1</button>
-                  <button className="page-btn">2</button>
-                  <button className="page-btn">3</button>
-                  <button className="page-btn">4</button>
-                  <button className="page-btn">5</button>
+                  <button className="page-btn active" type="button">
+                    1
+                  </button>
+                  <button className="page-btn" type="button">
+                    2
+                  </button>
+                  <button className="page-btn" type="button">
+                    3
+                  </button>
+                  <button className="page-btn" type="button">
+                    4
+                  </button>
+                  <button className="page-btn" type="button">
+                    5
+                  </button>
                   <span
                     style={{ padding: "0 12px", color: "var(--neutral-400)" }}
                   >
                     ...
                   </span>
-                  <button className="page-btn">114</button>
-                  <button className="page-btn">
+                  <button className="page-btn" type="button">
+                    114
+                  </button>
+                  <button className="page-btn" type="button">
                     <i className="fas fa-chevron-right"></i>
                   </button>
                 </div>
@@ -1186,10 +1211,10 @@ function App() {
           azalabilir!
         </div>
         <div className="suggestion-actions">
-          <button className="suggestion-reject">
+          <button className="suggestion-reject" type="button">
             <i className="fas fa-times"></i> Hayır
           </button>
-          <button className="suggestion-accept">
+          <button className="suggestion-accept" type="button">
             <i className="fas fa-check"></i> Ekle (+5 puan)
           </button>
         </div>
@@ -1213,7 +1238,7 @@ function App() {
               </div>
             </div>
             <div className="missing-fields-list" id="missingFieldsList">
-              {/* <!-- Dynamic content will be inserted here --> */}
+              {/* <!-- Dynamic content will be inserted here */}
             </div>
             <div
               style={{
@@ -1222,11 +1247,11 @@ function App() {
                 justifyContent: "flex-end",
               }}
             >
-              <button className="btn btn-secondary">
+              <button className="btn btn-secondary" type="button">
                 <i className="fas fa-times"></i>
                 Şimdi Değil
               </button>
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" type="button">
                 <i className="fas fa-magic"></i>
                 AI ile Hızlı Doldur
               </button>
@@ -1242,7 +1267,7 @@ function App() {
               <i className="fas fa-cog"></i>
               Akıllı Ürün Özellikleri & Gelir Artışı
             </h2>
-            <button className="modal-close">
+            <button className="modal-close" type="button">
               <i className="fas fa-times"></i>
             </button>
           </div>
@@ -1261,7 +1286,7 @@ function App() {
               <i className="fas fa-question-circle"></i>
               Yardım
             </h2>
-            <button className="modal-close">
+            <button className="modal-close" type="button">
               <i className="fas fa-times"></i>
             </button>
           </div>
@@ -1270,7 +1295,7 @@ function App() {
               {/* <!-- Content will be dynamically loaded --> */}
             </div>
             <div style={{ textAlign: "center", marginTop: 24 }}>
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" type="button">
                 <i className="fas fa-check"></i>
                 Anladım
               </button>
