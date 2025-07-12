@@ -50,8 +50,8 @@ npm run format    # Format code
 ```
 
 ## 📁 Project Structure
-
 ```
+
 turkwise-test/
 ├── public/           # Static files
 ├── src/
@@ -68,8 +68,14 @@ turkwise-test/
 └── biome.json
 ```
 
-## 🔧 Configuration
+## 🎨 Icons
 
+This project uses Font Awesome for icons. Font Awesome provides thousands of scalable vector icons that can be easily customized with CSS.
+
+
+## 🔧 Configuration
+```
+```
 ### TypeScript
 The project uses strict TypeScript configuration to ensure code quality.
 
