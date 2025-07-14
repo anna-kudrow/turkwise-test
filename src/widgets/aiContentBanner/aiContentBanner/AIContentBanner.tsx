@@ -1,5 +1,5 @@
 import AIStatItem from "../aiStatItem/AIStatItem";
-import { aiStatMockData } from "../aiStatItem/lib/mocks";
+import { aiStatData } from "../config/ai-content-data";
 import "./styles.css";
 
 function AIContentBanner() {
@@ -18,7 +18,7 @@ function AIContentBanner() {
         </button>
       </div>
       <div className="completion-stats">
-        {aiStatMockData.map((aiStatItem) => (
+        {aiStatData.map((aiStatItem) => (
           <AIStatItem key={aiStatItem.analizLabel} props={aiStatItem} />
         ))}
       </div>

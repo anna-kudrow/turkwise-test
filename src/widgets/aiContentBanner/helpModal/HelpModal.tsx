@@ -1,7 +1,8 @@
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: <explanation> */
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: <explanation> */
 import "./styles.css";
-import { createPortal } from "react-dom";
-import type { AnalisDescription } from "../aiStatItem/types";
 import { Portal } from "../../../shared/portal/Portal";
+import type { AnalisDescription } from "../aiStatItem/types";
 
 function HelpModal({
   isOpen,
@@ -15,8 +16,16 @@ function HelpModal({
   // <!-- Other modals remain the same as original -->
   return (
     <Portal>
-      <div id="helpModal" className={`modal ${isOpen ? "active" : ""}`}>
-        <div className="modal-content help-tooltip-modal">
+      <div
+        id="helpModal"
+        className={`modal ${isOpen ? "active" : ""}`}
+        onClick={onClose}
+        onKeyDown={onClose}
+      >
+        <div
+          className="modal-content help-tooltip-modal"
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="modal-header">
             <h2 className="modal-title">
               <i className="fas fa-question-circle"></i>

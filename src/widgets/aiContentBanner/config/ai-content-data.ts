@@ -1,6 +1,6 @@
-import type { AIStatItemType } from "../types";
+import type { AIStatItemType } from '../../aiStatItem/types';
 
-export const aiStatMockData: AIStatItemType[] = [
+export const aiStatData: AIStatItemType[] = [
   {
     analizLabel: "Ürün Açıklaması Tamamlanma",
     percentage: "87%",
