@@ -1,8 +1,8 @@
 /** biome-ignore-all lint/a11y/noLabelWithoutControl: <explanation> */
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
-import DashboardLayout from "./layouts/dashboardLayou/DashboardLayout";
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
+import DashboardLayout from "./layouts/dashboardLayou/DashboardLayout";
 
 function App() {
   return (

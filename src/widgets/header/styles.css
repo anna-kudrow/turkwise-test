@@ -1,0 +1,285 @@
+/* Enhanced Header with Revenue Tracker */
+
+.page-header {
+  background: rgba(255, 255, 255, 0.95);
+
+  backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid var(--glass-border);
+
+  padding: 24px 32px;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+}
+
+[data-theme="dark"] .page-header {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.header-content {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--neutral-500);
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+.breadcrumb-item {
+  transition: color 0.2s;
+}
+
+.breadcrumb-item:hover {
+  color: var(--primary-color);
+}
+
+.page-title {
+  font-size: 32px;
+
+  font-weight: 800;
+
+  background: linear-gradient(135deg, var(--neutral-900), var(--primary-color));
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: -1px;
+}
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+}
+
+/* Revenue Potential Tracker - NEW */
+
+.revenue-tracker {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: linear-gradient(135deg, var(--revenue-color), #059669);
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 16px;
+
+  font-weight: 600;
+
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+
+  animation: revenuePulse 3s ease-in-out infinite;
+}
+
+@keyframes revenuePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+  }
+}
+
+.revenue-tracker-icon {
+  font-size: 18px;
+
+  animation: coinSpin 4s linear infinite;
+}
+
+@keyframes coinSpin {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.revenue-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.revenue-potential {
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.revenue-label {
+  font-size: 11px;
+
+  opacity: 0.9;
+}
+
+/* AI IQ Badge - Enhanced */
+
+.ai-iq-badge {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-light)
+  );
+
+  color: white;
+
+  padding: 8px 16px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+
+  cursor: help;
+
+  position: relative;
+}
+
+.ai-iq-badge:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 4px 15px rgba(56, 112, 192, 0.3);
+}
+
+.ai-brain-icon {
+  font-size: 14px;
+
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.ai-iq-score {
+  font-weight: 700;
+}
+
+.ai-iq-tooltip {
+  position: absolute;
+
+  bottom: 100%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: var(--neutral-900);
+
+  color: white;
+
+  padding: 8px 12px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: all 0.2s;
+
+  margin-bottom: 8px;
+
+  z-index: 1000;
+}
+
+.ai-iq-badge:hover .ai-iq-tooltip {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+/* Theme Toggle Button */
+
+.theme-toggle {
+  background: var(--primary-color);
+
+  color: white;
+
+  border: none;
+
+  width: 36px;
+
+  height: 36px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
