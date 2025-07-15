@@ -2,7 +2,7 @@ import { useTheme } from "../../hooks/useTheme";
 import "./styles.css";
 
 function Header() {
-  const [_, toggleTheme] = useTheme();
+  const [theme, toggleTheme] = useTheme();
 
   return (
     // Enhanced Header with Revenue Tracker & AI IQ Badge
@@ -38,7 +38,10 @@ function Header() {
             </div>
           </div>
           <button type="button" onClick={toggleTheme} className="theme-toggle">
-            <i className="fas fa-moon" id="themeIcon"></i>
+            <i
+              className={theme === "light" ? "fas fa-moon" : "fas fa-sun"}
+              id="themeIcon"
+            ></i>
           </button>
           <button className="btn btn-secondary" type="button">
             <i className="fas fa-download"></i>
