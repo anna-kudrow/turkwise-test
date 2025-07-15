@@ -1,12 +1,12 @@
 import { revenueImpactStats } from "../revenueImpactStat/lib/mocks";
 import RevenueImpactStat from "../revenueImpactStat/RevenueImpactStat";
-import "./styles.css";
+import styles from "./RevenueImpactBanner.module.css";
 
 function RevenueImpactBanner() {
   return (
-    <section className="revenue-impact-banner fade-in-up">
-      <div className="revenue-impact-content">
-        <div className="revenue-impact-title">
+    <section className={`${styles["revenue-impact-banner"]} fade-in-up`}>
+      <div className={styles["revenue-impact-content"]}>
+        <div className={styles["revenue-impact-title"]}>
           <i className="fas fa-rocket"></i>
           Eksik Bilgileri Doldur, Gelirini Katla!
         </div>
@@ -22,7 +22,7 @@ function RevenueImpactBanner() {
           potansiyelinizi hesaplıyor. Aşağıdaki bilgi türlerini tamamladığınızda
           müşteri deneyimi ve satış performansınız dramatik şekilde artacak!
         </p>
-        <div className="revenue-impact-stats">
+        <div className={styles["revenue-impact-stats"]}>
           {revenueImpactStats.map((statItem) => (
             <RevenueImpactStat
               key={statItem.label}

@@ -1,4 +1,4 @@
-import "./styles.css";
+import styles from "./RevenueImpactStat.module.css";
 
 function RevenueImpactStat({
   statValue,
@@ -8,9 +8,9 @@ function RevenueImpactStat({
   statLabel: string;
 }) {
   return (
-    <div className="revenue-impact-stat">
-      <div className="revenue-impact-stat-value">{statValue}</div>
-      <div className="revenue-impact-stat-label">{statLabel}</div>
+    <div className={styles["revenue-impact-stat"]}>
+      <div className={styles["revenue-impact-stat-value"]}>{statValue}</div>
+      <div className={styles["revenue-impact-stat-label"]}>{statLabel}</div>
     </div>
   );
 }

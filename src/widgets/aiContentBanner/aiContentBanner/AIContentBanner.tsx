@@ -1,13 +1,13 @@
 import AIStatItem from "../aiStatItem/AIStatItem";
 import { aiStatData } from "../config/ai-content-data";
-import "./styles.css";
+import styles from "./AIContentBanner.module.css";
 
 function AIContentBanner() {
   return (
-    <section className="ai-content-section fade-in-up">
-      <div className="ai-header">
-        <div className="ai-title">
-          <div className="ai-icon">
+    <section className={`${styles["ai-content-section"]} fade-in-up`}>
+      <div className={styles["ai-header"]}>
+        <div className={styles["ai-title"]}>
+          <div className={styles["ai-icon"]}>
             <i className="fas fa-brain"></i>
           </div>
           AI İçerik Zekası & Doluluk Analizi
@@ -17,7 +17,7 @@ function AIContentBanner() {
           Detaylı Rapor
         </button>
       </div>
-      <div className="completion-stats">
+      <div className={styles["completion-stats"]}>
         {aiStatData.map((aiStatItem) => (
           <AIStatItem key={aiStatItem.analizLabel} props={aiStatItem} />
         ))}

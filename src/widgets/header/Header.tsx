@@ -1,43 +1,52 @@
 import { useTheme } from "../../hooks/useTheme";
-import "./styles.css";
+import styles from "./Header.module.css";
 
 function Header() {
   const [theme, toggleTheme] = useTheme();
 
   return (
     // Enhanced Header with Revenue Tracker & AI IQ Badge
-    <header className="page-header">
-      <div className="header-content">
-        <div className="header-left">
-          <div className="breadcrumb">
-            <span className="breadcrumb-item">AI Yönetimi</span>
+    <header className={styles["page-header"]}>
+      <div className={styles["header-content"]}>
+        <div className={styles["header-left"]}>
+          <div className={styles.breadcrumb}>
+            <span className={styles["breadcrumb-item"]}>AI Yönetimi</span>
             <i className="fas fa-chevron-right"></i>
-            <span className="breadcrumb-item">Envanter</span>
+            <span className={styles["breadcrumb-item"]}>Envanter</span>
           </div>
-          <h1 className="page-title">Akıllı Envanter Yönetimi</h1>
+          <h1 className={styles["page-title"]}>Akıllı Envanter Yönetimi</h1>
         </div>
-        <div className="header-actions">
+        <div className={styles["header-actions"]}>
           {/* <!-- Revenue Potential Tracker - NEW --> */}
-          <div className="revenue-tracker" id="revenueTracker">
-            <i className="fas fa-coins revenue-tracker-icon"></i>
-            <div className="revenue-info">
-              <div className="revenue-potential" id="revenuePotential">
+          <div className={styles["revenue-tracker"]} id="revenueTracker">
+            <i className={`fas fa-coins ${styles["revenue-tracker-icon"]}`}></i>
+            <div className={styles["revenue-info"]}>
+              <div
+                className={styles["revenue-potential"]}
+                id="revenuePotential"
+              >
                 +1.247₺
               </div>
-              <div className="revenue-label">Aylık Gelir Potansiyeli</div>
+              <div className={styles["revenue-label"]}>
+                Aylık Gelir Potansiyeli
+              </div>
             </div>
           </div>
           {/* <!-- AI IQ Badge - Enhanced --> */}
-          <div className="ai-iq-badge" id="aiIqBadge">
-            <i className="fas fa-brain ai-brain-icon"></i>
-            <span className="ai-iq-score" id="aiIqScore">
+          <div className={styles["ai-iq-badge"]} id="aiIqBadge">
+            <i className={`fas fa-brain ${styles["ai-brain-icon"]}`}></i>
+            <span className={styles["ai-iq-score"]} id="aiIqScore">
               847
             </span>
-            <div className="ai-iq-tooltip">
+            <div className={styles["ai-iq-tooltip"]}>
               AI Zekanız: Her veri girişi AI'yı daha akıllı yapıyor!
             </div>
           </div>
-          <button type="button" onClick={toggleTheme} className="theme-toggle">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className={styles["theme-toggle"]}
+          >
             <i
               className={theme === "light" ? "fas fa-moon" : "fas fa-sun"}
               id="themeIcon"

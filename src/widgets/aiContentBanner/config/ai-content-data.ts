@@ -1,4 +1,4 @@
-import type { AIStatItemType } from '../../aiStatItem/types';
+import type { AIStatItemType } from "../../aiStatItem/types";
 
 export const aiStatData: AIStatItemType[] = [
   {

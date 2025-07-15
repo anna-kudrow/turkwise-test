@@ -2,6 +2,7 @@
 /** biome-ignore-all lint/a11y/useKeyWithClickEvents: <explanation> */
 import type { ReactNode } from "react";
 import { Portal } from "../portal/Portal";
+import styles from "./Modal.module.css";
 
 interface ModalProps {
   isOpen: boolean;
@@ -16,11 +17,14 @@ function Modal({ isOpen, onClose, children, className = "", id }: ModalProps) {
     <Portal>
       <div
         id={id}
-        className={`modal ${isOpen ? "active" : ""} ${className}`}
+        className={`${styles.modal} ${isOpen ? styles.active : ""} ${className}`}
         onClick={onClose}
         onKeyDown={onClose}
       >
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div
+          className={styles["modal-content"]}
+          onClick={(e) => e.stopPropagation()}
+        >
           {children}
         </div>
       </div>

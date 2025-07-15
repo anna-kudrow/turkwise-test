@@ -1,6 +1,6 @@
 /** biome-ignore-all lint/a11y/noLabelWithoutControl: <explanation> */
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./App.css";
+import "../global.css";
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
 import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout";
 
@@ -89,31 +89,6 @@ function App() {
           <div className="modal-body">
             <div id="propertiesContent">
               {/* <!-- Content will be dynamically loaded based on category --> */}
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <!-- Other modals remain the same as original --> */}
-      <div id="helpModal" className="modal">
-        <div className="modal-content help-tooltip-modal">
-          <div className="modal-header">
-            <h2 className="modal-title">
-              <i className="fas fa-question-circle"></i>
-              Yardım
-            </h2>
-            <button className="modal-close" type="button">
-              <i className="fas fa-times"></i>
-            </button>
-          </div>
-          <div className="modal-body">
-            <div className="help-content" id="helpContent">
-              {/* <!-- Content will be dynamically loaded --> */}
-            </div>
-            <div style={{ textAlign: "center", marginTop: 24 }}>
-              <button className="btn btn-primary" type="button">
-                <i className="fas fa-check"></i>
-                Anladım
-              </button>
             </div>
           </div>
         </div>

@@ -94,31 +94,3 @@
 
   gap: 24px;
 }
-
-.stat-item {
-  background: var(--neutral-50);
-
-  border: 1px solid var(--neutral-200);
-
-  border-radius: 16px;
-
-  padding: 24px;
-
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  cursor: pointer;
-
-  position: relative;
-}
-
-[data-theme="dark"] .stat-item {
-  background: var(--neutral-200);
-}
-
-.stat-item:hover {
-  transform: translateY(-4px);
-
-  box-shadow: var(--shadow-lg);
-
-  border-color: var(--primary-color);
-}

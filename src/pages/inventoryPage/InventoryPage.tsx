@@ -1,8 +1,7 @@
-/** biome-ignore-all lint/a11y/noLabelWithoutControl: <explanation> */
+/** biome-ignore-all lint/a11y/noLabelWithoutControl: a label is used without an input */
 import AIContentBanner from "../../widgets/aiContentBanner/aiContentBanner/AIContentBanner";
 import Header from "../../widgets/header/Header";
 import RevenueImpactBanner from "../../widgets/revenueImpactBanner/revenueImpactBanner/RevenueImpactBanner";
-import "./styles.css";
 
 function InventoryPage() {
   return (

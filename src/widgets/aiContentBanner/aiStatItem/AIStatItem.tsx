@@ -1,5 +1,6 @@
 import { useState } from "react";
 import HelpModal from "../helpModal/HelpModal";
+import styles from "./AIStatItem.module.css";
 import type { AIStatItemType } from "./types";
 
 function AIStatItem({ props }: { props: AIStatItemType }) {
@@ -8,18 +9,21 @@ function AIStatItem({ props }: { props: AIStatItemType }) {
     <>
       <button
         type="button"
-        className="stat-item"
+        className={styles["stat-item"]}
         onClick={() => setHelpModalOpen(true)}
       >
-        <div className="stat-help-icon">
+        <div className={styles["stat-help-icon"]}>
           <i className="fas fa-question"></i>
         </div>
-        <div className="stat-label">{props.analizLabel}</div>
-        <div className="stat-value">{props.percentage}</div>
-        <div className="stat-progress">
-          <div className="stat-progress-fill" style={{ width: "87%" }}></div>
+        <div className={styles["stat-label"]}>{props.analizLabel}</div>
+        <div className={styles["stat-value"]}>{props.percentage}</div>
+        <div className={styles["stat-progress"]}>
+          <div
+            className={styles["stat-progress-fill"]}
+            style={{ width: "87%" }}
+          ></div>
         </div>
-        <div className="stat-change positive">
+        <div className={`${styles["stat-change"]} ${styles.positive}`}>
           <i className="fas fa-arrow-up"></i>
           {props.weeklyChange}
         </div>
