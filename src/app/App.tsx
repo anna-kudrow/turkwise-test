@@ -2,7 +2,7 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 import InventoryPage from "../pages/inventoryPage/InventoryPage";
-import DashboardLayout from "./layouts/dashboardLayou/DashboardLayout";
+import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout";
 
 function App() {
   return (

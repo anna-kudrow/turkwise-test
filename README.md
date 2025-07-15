@@ -45,7 +45,6 @@ Local preview of the production build
 
 ### Linting and Formatting
 ```bash
-npm run lint      # Check code quality
 npm run format    # Format code
 ```
 
