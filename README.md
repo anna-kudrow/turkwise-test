@@ -9,6 +9,8 @@ This is a test task for TurkWise company. The task was to convert an HTML docume
 - **Vite** 
 - **React Router DOM** 
 - **Biome** 
+- **Redux** 
+- **Redux Toolkit** 
 
 ## 📦 Installation
 
@@ -45,10 +47,10 @@ Local preview of the production build
 
 ### Linting and Formatting
 ```bash
-npm run format    # Format code
+npm run format
 ```
 
 
 ## 🎨 Icons
 
-This project uses Font Awesome for icons. Font Awesome provides thousands of scalable vector icons that can be easily customized with CSS.
+This project uses Font Awesome for icons.
