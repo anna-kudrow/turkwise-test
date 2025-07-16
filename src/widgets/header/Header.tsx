@@ -1,9 +1,7 @@
-import { useTheme } from "../../hooks/useTheme";
+import ToggleThemeBtn from "../../features/theme/toggleThemeBtn/ToggleThemeBtn";
 import styles from "./Header.module.css";
 
 function Header() {
-  const [theme, toggleTheme] = useTheme();
-
   return (
     // Enhanced Header with Revenue Tracker & AI IQ Badge
     <header className={styles["page-header"]}>
@@ -42,16 +40,8 @@ function Header() {
               AI Zekanız: Her veri girişi AI'yı daha akıllı yapıyor!
             </div>
           </div>
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className={styles["theme-toggle"]}
-          >
-            <i
-              className={theme === "light" ? "fas fa-moon" : "fas fa-sun"}
-              id="themeIcon"
-            ></i>
-          </button>
+          <ToggleThemeBtn />
+
           <button className="btn btn-secondary" type="button">
             <i className="fas fa-download"></i>
             Dışa Aktar
