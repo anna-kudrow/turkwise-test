@@ -2,29 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      const savedTheme = localStorage.getItem("theme") || "light";
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    </script>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Envanter Yönetimi - TurkwiseS</title>
     <style>
 
 
-      /* Main Content */
 
-      .main-content {
-
-          margin-left: 280px;
-
-          flex: 1;
-
-          padding: 0;
-
-          background: transparent;
-
-      }
 
       /* IQ Increase Animation */
 
@@ -482,1602 +466,12 @@
 
       }
 
-      /* Advanced Filter System */
 
-      .filter-system {
 
-          margin: 32px;
+   
 
-          background: rgba(255, 255, 255, 0.95);
 
-          backdrop-filter: blur(20px);
-
-          border: 1px solid var(--glass-border);
-
-          border-radius: 20px;
-
-          overflow: hidden;
-
-          box-shadow: var(--shadow-lg);
-
-      }
-
-
-
-      [data-theme="dark"] .filter-system {
-
-          background: rgba(30, 41, 59, 0.95);
-
-      }
-
-
-
-      .filter-header {
-
-          background: linear-gradient(135deg, var(--neutral-50), var(--neutral-100));
-
-          padding: 24px 32px;
-
-          border-bottom: 1px solid var(--neutral-200);
-
-          display: flex;
-
-          justify-content: space-between;
-
-          align-items: center;
-
-      }
-
-
-
-      [data-theme="dark"] .filter-header {
-
-          background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
-
-      }
-
-
-
-      .filter-title {
-
-          font-size: 20px;
-
-          font-weight: 700;
-
-          color: var(--neutral-800);
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-      }
-
-
-
-      .filter-toggle {
-
-          background: none;
-
-          border: none;
-
-          font-size: 18px;
-
-          color: var(--primary-color);
-
-          cursor: pointer;
-
-          transition: transform 0.2s;
-
-      }
-
-
-
-      .filter-toggle.collapsed {
-
-          transform: rotate(180deg);
-
-      }
-
-
-
-      .filter-content {
-
-          padding: 32px;
-
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-      }
-
-
-
-      .filter-content.collapsed {
-
-          max-height: 0;
-
-          padding: 0 32px;
-
-          overflow: hidden;
-
-      }
-
-
-
-      .filter-grid {
-
-          display: grid;
-
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-          gap: 24px;
-
-          margin-bottom: 32px;
-
-      }
-
-
-
-      .filter-group {
-
-          position: relative;
-
-      }
-
-
-
-      .filter-label {
-
-          display: block;
-
-          font-size: 14px;
-
-          font-weight: 600;
-
-          color: var(--neutral-700);
-
-          margin-bottom: 8px;
-
-      }
-
-
-
-      .filter-input {
-
-          width: 100%;
-
-          padding: 16px 20px;
-
-          border: 2px solid var(--neutral-200);
-
-          border-radius: 12px;
-
-          font-size: 14px;
-
-          font-weight: 500;
-
-          background: white;
-
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      [data-theme="dark"] .filter-input {
-
-          background: var(--neutral-100);
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      .filter-input:focus {
-
-          outline: none;
-
-          border-color: var(--primary-color);
-
-          box-shadow: 0 0 0 4px rgba(56, 112, 192, 0.1);
-
-      }
-
-
-
-      .marketplace-section {
-
-          margin-bottom: 32px;
-
-      }
-
-
-
-      .marketplace-grid {
-
-          display: grid;
-
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-          gap: 24px;
-
-      }
-
-
-
-      .marketplace-category {
-
-          background: var(--neutral-50);
-
-          border: 2px solid var(--neutral-200);
-
-          border-radius: 16px;
-
-          padding: 24px;
-
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-      }
-
-
-
-      [data-theme="dark"] .marketplace-category {
-
-          background: var(--neutral-200);
-
-      }
-
-
-
-      .marketplace-category:hover {
-
-          border-color: var(--primary-color);
-
-          box-shadow: var(--shadow-md);
-
-      }
-
-
-
-      .category-title {
-
-          font-size: 16px;
-
-          font-weight: 700;
-
-          color: var(--neutral-800);
-
-          margin-bottom: 16px;
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-      }
-
-
-
-      .marketplace-options {
-
-          display: grid;
-
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-
-          gap: 12px;
-
-      }
-
-
-
-      .marketplace-option {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-          padding: 12px 16px;
-
-          background: white;
-
-          border: 2px solid var(--neutral-200);
-
-          border-radius: 12px;
-
-          cursor: pointer;
-
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-          position: relative;
-
-      }
-
-
-
-      [data-theme="dark"] .marketplace-option {
-
-          background: var(--neutral-100);
-
-      }
-
-
-
-      .marketplace-option:hover {
-
-          border-color: var(--primary-light);
-
-      }
-
-
-
-      .marketplace-option.active {
-
-          border-color: var(--primary-color);
-
-          background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-
-          color: white;
-
-      }
-
-
-
-      .marketplace-option.coming-soon {
-
-          opacity: 0.6;
-
-          cursor: not-allowed;
-
-          position: relative;
-
-      }
-
-
-
-      .marketplace-option.coming-soon::after {
-
-          content: 'Yakında';
-
-          position: absolute;
-
-          top: -8px;
-
-          right: -8px;
-
-          background: var(--warning-color);
-
-          color: white;
-
-          font-size: 10px;
-
-          font-weight: 700;
-
-          padding: 2px 6px;
-
-          border-radius: 6px;
-
-      }
-
-
-
-      .marketplace-checkbox {
-
-          appearance: none;
-
-          width: 20px;
-
-          height: 20px;
-
-          border: 2px solid var(--neutral-300);
-
-          border-radius: 6px;
-
-          position: relative;
-
-          transition: all 0.2s;
-
-      }
-
-
-
-      .marketplace-checkbox:checked {
-
-          background: var(--primary-color);
-
-          border-color: var(--primary-color);
-
-      }
-
-
-
-      .marketplace-checkbox:checked::after {
-
-          content: '✓';
-
-          position: absolute;
-
-          top: 50%;
-
-          left: 50%;
-
-          transform: translate(-50%, -50%);
-
-          color: white;
-
-          font-size: 12px;
-
-          font-weight: bold;
-
-      }
-
-
-
-      .marketplace-label {
-
-          font-size: 14px;
-
-          font-weight: 600;
-
-          flex-grow: 1;
-
-      }
-
-
-
-      /* Advanced Data Table */
-
-      .data-table-section {
-
-          margin: 32px;
-
-          background: rgba(255, 255, 255, 0.95);
-
-          backdrop-filter: blur(20px);
-
-          border: 1px solid var(--glass-border);
-
-          border-radius: 20px;
-
-          overflow: hidden;
-
-          box-shadow: var(--shadow-lg);
-
-      }
-
-
-
-      [data-theme="dark"] .data-table-section {
-
-          background: rgba(30, 41, 59, 0.95);
-
-      }
-
-
-
-      .table-controls {
-
-          padding: 24px 32px;
-
-          border-bottom: 1px solid var(--neutral-200);
-
-          display: flex;
-
-          justify-content: space-between;
-
-          align-items: center;
-
-          flex-wrap: wrap;
-
-          gap: 16px;
-
-      }
-
-
-
-      .table-left-controls {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 16px;
-
-      }
-
-
-
-      .search-container {
-
-          position: relative;
-
-      }
-
-
-
-      .search-input {
-
-          width: 320px;
-
-          padding: 16px 20px 16px 52px;
-
-          border: 2px solid var(--neutral-200);
-
-          border-radius: 12px;
-
-          font-size: 14px;
-
-          background: white;
-
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      [data-theme="dark"] .search-input {
-
-          background: var(--neutral-100);
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      .search-input:focus {
-
-          outline: none;
-
-          border-color: var(--primary-color);
-
-          box-shadow: 0 0 0 4px rgba(56, 112, 192, 0.1);
-
-      }
-
-
-
-      .search-icon {
-
-          position: absolute;
-
-          left: 18px;
-
-          top: 50%;
-
-          transform: translateY(-50%);
-
-          color: var(--neutral-400);
-
-          font-size: 16px;
-
-      }
-
-
-
-      .column-selector {
-
-          position: relative;
-
-      }
-
-
-
-      .column-btn {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 8px;
-
-          padding: 16px 20px;
-
-          border: 2px solid var(--neutral-200);
-
-          border-radius: 12px;
-
-          background: white;
-
-          cursor: pointer;
-
-          font-size: 14px;
-
-          font-weight: 600;
-
-          transition: all 0.2s;
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      [data-theme="dark"] .column-btn {
-
-          background: var(--neutral-100);
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      .column-btn:hover {
-
-          border-color: var(--primary-color);
-
-      }
-
-
-
-      .column-dropdown {
-
-          position: absolute;
-
-          top: 100%;
-
-          right: 0;
-
-          width: 320px;
-
-          background: white;
-
-          border: 1px solid var(--neutral-200);
-
-          border-radius: 12px;
-
-          box-shadow: var(--shadow-xl);
-
-          z-index: 1000;
-
-          margin-top: 8px;
-
-          opacity: 0;
-
-          visibility: hidden;
-
-          transform: translateY(-10px);
-
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-      }
-
-
-
-      [data-theme="dark"] .column-dropdown {
-
-          background: var(--neutral-100);
-
-      }
-
-
-
-      .column-dropdown.active {
-
-          opacity: 1;
-
-          visibility: visible;
-
-          transform: translateY(0);
-
-      }
-
-
-
-      .column-dropdown-header {
-
-          padding: 16px 20px;
-
-          border-bottom: 1px solid var(--neutral-200);
-
-          font-weight: 700;
-
-          color: var(--neutral-800);
-
-      }
-
-
-
-      .column-options {
-
-          max-height: 300px;
-
-          overflow-y: auto;
-
-          padding: 8px;
-
-      }
-
-
-
-      .column-option {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-          padding: 12px 16px;
-
-          border-radius: 8px;
-
-          cursor: pointer;
-
-          transition: background 0.2s;
-
-      }
-
-
-
-      .column-option:hover {
-
-          background: var(--neutral-50);
-
-      }
-
-
-
-      [data-theme="dark"] .column-option:hover {
-
-          background: var(--neutral-200);
-
-      }
-
-
-
-      .column-checkbox {
-
-          appearance: none;
-
-          width: 18px;
-
-          height: 18px;
-
-          border: 2px solid var(--neutral-300);
-
-          border-radius: 4px;
-
-          position: relative;
-
-          transition: all 0.2s;
-
-      }
-
-
-
-      .column-checkbox:checked {
-
-          background: var(--primary-color);
-
-          border-color: var(--primary-color);
-
-      }
-
-
-
-      .column-checkbox:checked::after {
-
-          content: '✓';
-
-          position: absolute;
-
-          top: 50%;
-
-          left: 50%;
-
-          transform: translate(-50%, -50%);
-
-          color: white;
-
-          font-size: 10px;
-
-          font-weight: bold;
-
-      }
-
-
-
-      /* Enhanced Product Table */
-
-      .product-table {
-
-          width: 100%;
-
-          border-collapse: collapse;
-
-          background: white;
-
-      }
-
-
-
-      [data-theme="dark"] .product-table {
-
-          background: var(--neutral-100);
-
-      }
-
-
-
-      .product-table th {
-
-          background: linear-gradient(135deg, var(--neutral-50), var(--neutral-100));
-
-          padding: 20px 24px;
-
-          text-align: left;
-
-          font-size: 13px;
-
-          font-weight: 700;
-
-          color: var(--neutral-800);
-
-          text-transform: uppercase;
-
-          letter-spacing: 0.5px;
-
-          border-bottom: 2px solid var(--neutral-200);
-
-          position: sticky;
-
-          top: 0;
-
-          z-index: 10;
-
-      }
-
-
-
-      [data-theme="dark"] .product-table th {
-
-          background: linear-gradient(135deg, var(--neutral-200), var(--neutral-300));
-
-      }
-
-
-
-      .product-table th:hover {
-
-          background: linear-gradient(135deg, var(--neutral-100), var(--neutral-200));
-
-          cursor: pointer;
-
-      }
-
-
-
-      .product-table td {
-
-          padding: 20px 24px;
-
-          border-bottom: 1px solid var(--neutral-100);
-
-          vertical-align: middle;
-
-          transition: all 0.2s;
-
-      }
-
-
-
-      .product-table tr:hover {
-
-          background: var(--neutral-50);
-
-      }
-
-
-
-      [data-theme="dark"] .product-table tr:hover {
-
-          background: var(--neutral-200);
-
-      }
-
-
-
-      .product-row {
-
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-      }
-
-
-
-      .product-row:hover {
-
-          transform: scale(1.01);
-
-          box-shadow: var(--shadow-md);
-
-      }
-
-
-
-      /* Enhanced Product Row with Missing Info Indicators - NEW */
-
-      .product-row.missing-critical-info {
-
-          border-left: 4px solid var(--warning-color);
-
-          background: rgba(245, 158, 11, 0.05) !important;
-
-      }
-
-
-
-      .product-row.revenue-opportunity {
-
-          border-left: 4px solid var(--revenue-color);
-
-          background: rgba(16, 185, 129, 0.05) !important;
-
-      }
-
-
-
-      .missing-info-indicator {
-
-          position: absolute;
-
-          top: -2px;
-
-          right: -2px;
-
-          width: 12px;
-
-          height: 12px;
-
-          background: var(--warning-color);
-
-          border-radius: 50%;
-
-          border: 2px solid white;
-
-          animation: missingInfoPulse 2s ease-in-out infinite;
-
-      }
-
-
-
-      @keyframes missingInfoPulse {
-
-          0%, 100% { transform: scale(1); }
-
-          50% { transform: scale(1.2); }
-
-      }
-
-
-
-      /* Product Variants Toggle */
-
-      .variants-toggle {
-
-          width: 24px;
-
-          height: 24px;
-
-          background: var(--primary-color);
-
-          color: white;
-
-          border: none;
-
-          border-radius: 6px;
-
-          cursor: pointer;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-          transition: all 0.2s;
-
-          margin-left: 8px;
-
-      }
-
-
-
-      .variants-toggle:hover {
-
-          background: var(--primary-dark);
-
-          transform: scale(1.1);
-
-      }
-
-
-
-      .variants-toggle.expanded {
-
-          transform: rotate(180deg);
-
-      }
-
-
-
-      .product-variants {
-
-          display: none;
-
-          background: var(--neutral-50);
-
-          border-left: 4px solid var(--primary-color);
-
-      }
-
-
-
-      [data-theme="dark"] .product-variants {
-
-          background: var(--neutral-200);
-
-      }
-
-
-
-      .product-variants.expanded {
-
-          display: table-row;
-
-      }
-
-
-
-      .product-variants td {
-
-          padding: 16px 24px 16px 48px;
-
-          font-size: 14px;
-
-          color: var(--neutral-600);
-
-      }
-
-
-
-      .variant-item {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-          padding: 8px 0;
-
-          border-bottom: 1px solid var(--neutral-200);
-
-      }
-
-
-
-      .variant-item:last-child {
-
-          border-bottom: none;
-
-      }
-
-
-
-      .variant-image {
-
-          width: 32px;
-
-          height: 32px;
-
-          border-radius: 6px;
-
-          object-fit: cover;
-
-      }
-
-
-
-      .variant-details {
-
-          flex-grow: 1;
-
-      }
-
-
-
-      .variant-name {
-
-          font-weight: 600;
-
-          color: var(--neutral-800);
-
-          font-size: 13px;
-
-      }
-
-
-
-      .variant-specs {
-
-          font-size: 11px;
-
-          color: var(--neutral-500);
-
-      }
-
-
-
-      .product-image-container {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 16px;
-
-          position: relative;
-
-      }
-
-
-
-      .product-image {
-
-          width: 64px;
-
-          height: 64px;
-
-          border-radius: 12px;
-
-          object-fit: cover;
-
-          border: 2px solid var(--neutral-200);
-
-          transition: all 0.2s;
-
-      }
-
-
-
-      .product-image:hover {
-
-          transform: scale(1.1);
-
-          border-color: var(--primary-color);
-
-      }
-
-
-
-      .product-info {
-
-          display: flex;
-
-          flex-direction: column;
-
-          gap: 6px;
-
-      }
-
-
-
-      .product-name {
-
-          font-weight: 700;
-
-          color: var(--neutral-900);
-
-          font-size: 16px;
-
-          max-width: 280px;
-
-          overflow: hidden;
-
-          text-overflow: ellipsis;
-
-          white-space: nowrap;
-
-          transition: color 0.2s;
-
-      }
-
-
-
-      .product-name:hover {
-
-          color: var(--primary-color);
-
-          cursor: pointer;
-
-      }
-
-
-
-      .product-sku {
-
-          font-size: 12px;
-
-          color: var(--neutral-500);
-
-          font-weight: 500;
-
-      }
-
-
-
-      .category-badge {
-
-          display: inline-flex;
-
-          align-items: center;
-
-          gap: 6px;
-
-          padding: 6px 12px;
-
-          background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-
-          color: white;
-
-          border-radius: 8px;
-
-          font-size: 12px;
-
-          font-weight: 600;
-
-      }
-
-
-
-      .price-container {
-
-          display: flex;
-
-          flex-direction: column;
-
-          gap: 4px;
-
-      }
-
-
-
-      .price-current {
-
-          font-size: 18px;
-
-          font-weight: 800;
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      .price-old {
-
-          font-size: 14px;
-
-          color: var(--neutral-500);
-
-          text-decoration: line-through;
-
-      }
-
-
-
-      .stock-container {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-      }
-
-
-
-      .stock-indicator {
-
-          width: 12px;
-
-          height: 12px;
-
-          border-radius: 50%;
-
-          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-
-      }
-
-
-
-      .stock-high { background: var(--success-color); }
-
-      .stock-medium { background: var(--warning-color); }
-
-      .stock-low { background: var(--error-color); }
-
-
-
-      .stock-value {
-
-          font-weight: 700;
-
-          color: var(--neutral-800);
-
-      }
-
-
-
-      .marketplace-badges {
-
-          display: flex;
-
-          gap: 6px;
-
-          flex-wrap: wrap;
-
-      }
-
-
-
-      .marketplace-badge {
-
-          padding: 4px 8px;
-
-          border-radius: 6px;
-
-          font-size: 10px;
-
-          font-weight: 700;
-
-          text-transform: uppercase;
-
-      }
-
-
-
-      .badge-trendyol { background: #ff6000; color: white; }
-
-      .badge-hepsiburada { background: #ff6000; color: white; }
-
-      .badge-amazon { background: #ff9900; color: white; }
-
-      .badge-n11 { background: #7b68ee; color: white; }
-
-
-
-      .ai-score-container {
-
-          display: flex;
-
-          align-items: center;
-
-          gap: 12px;
-
-      }
-
-
-
-      .ai-score-bar {
-
-          width: 80px;
-
-          height: 8px;
-
-          background: var(--neutral-200);
-
-          border-radius: 4px;
-
-          overflow: hidden;
-
-      }
-
-
-
-      .ai-score-fill {
-
-          height: 100%;
-
-          background: linear-gradient(90deg, var(--error-color), var(--warning-color), var(--success-color));
-
-          transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-
-      }
-
-
-
-      .ai-score-value {
-
-          font-weight: 700;
-
-          color: var(--neutral-800);
-
-          font-size: 14px;
-
-      }
-
-
-
-      /* Enhanced Action Buttons with Revenue Focus - NEW */
-
-      .action-buttons {
-
-          display: flex;
-
-          gap: 8px;
-
-      }
-
-
-
-      .action-btn {
-
-          width: 36px;
-
-          height: 36px;
-
-          border: none;
-
-          border-radius: 10px;
-
-          cursor: pointer;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-          font-size: 14px;
-
-          position: relative;
-
-      }
-
-
-
-      .action-btn:hover {
-
-          transform: scale(1.1);
-
-      }
-
-
-
-      .btn-edit { 
-
-          background: rgba(59, 130, 246, 0.1); 
-
-          color: #3b82f6; 
-
-      }
-
-
-
-      .btn-view { 
-
-          background: rgba(34, 197, 94, 0.1); 
-
-          color: #22c55e; 
-
-      }
-
-
-
-      .btn-properties {
-
-          background: rgba(168, 85, 247, 0.1);
-
-          color: #a855f7;
-
-      }
-
-
-
-      .btn-revenue-boost {
-
-          background: linear-gradient(135deg, var(--revenue-color), #059669);
-
-          color: white;
-
-          box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
-
-          animation: revenueBoostPulse 3s ease-in-out infinite;
-
-      }
-
-
-
-      @keyframes revenueBoostPulse {
-
-          0%, 100% { transform: scale(1); }
-
-          50% { transform: scale(1.05); }
-
-      }
-
-
-
-      /* Enhanced Tooltip */
-
-      .action-tooltip {
-
-          position: absolute;
-
-          bottom: 100%;
-
-          left: 50%;
-
-          transform: translateX(-50%);
-
-          background: var(--neutral-900);
-
-          color: white;
-
-          padding: 8px 12px;
-
-          border-radius: 6px;
-
-          font-size: 12px;
-
-          white-space: nowrap;
-
-          opacity: 0;
-
-          visibility: hidden;
-
-          transition: all 0.2s;
-
-          margin-bottom: 8px;
-
-          z-index: 1000;
-
-      }
-
-
-
-      .action-tooltip::after {
-
-          content: '';
-
-          position: absolute;
-
-          top: 100%;
-
-          left: 50%;
-
-          transform: translateX(-50%);
-
-          border: 4px solid transparent;
-
-          border-top-color: var(--neutral-900);
-
-      }
-
-
-
-      .action-btn:hover .action-tooltip {
-
-          opacity: 1;
-
-          visibility: visible;
-
-      }
-
+    
 
 
       /* Revenue Boost Modal - NEW */
@@ -3148,131 +1542,12 @@
 
 
 
-      /* Pagination */
-
-      .pagination {
-
-          padding: 24px 32px;
-
-          border-top: 1px solid var(--neutral-200);
-
-          display: flex;
-
-          justify-content: space-between;
-
-          align-items: center;
-
-      }
-
-
-
-      .pagination-info {
-
-          color: var(--neutral-600);
-
-          font-size: 14px;
-
-          font-weight: 500;
-
-      }
-
-
-
-      .pagination-controls {
-
-          display: flex;
-
-          gap: 8px;
-
-          align-items: center;
-
-      }
-
-
-
-      .page-btn {
-
-          width: 40px;
-
-          height: 40px;
-
-          border: 2px solid var(--neutral-200);
-
-          background: white;
-
-          border-radius: 10px;
-
-          cursor: pointer;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-          transition: all 0.2s;
-
-          font-weight: 600;
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      [data-theme="dark"] .page-btn {
-
-          background: var(--neutral-100);
-
-          color: var(--neutral-900);
-
-      }
-
-
-
-      .page-btn:hover {
-
-          border-color: var(--primary-color);
-
-          background: var(--primary-color);
-
-          color: white;
-
-      }
-
-
-
-      .page-btn.active {
-
-          background: var(--primary-color);
-
-          color: white;
-
-          border-color: var(--primary-color);
-
-      }
-
-
-
-      .page-btn:disabled {
-
-          opacity: 0.5;
-
-          cursor: not-allowed;
-
-      }
 
 
 
       /* Responsive Design */
 
       @media (max-width: 1200px) {
-
-          .main-content {
-
-              margin-left: 0;
-
-          }
 
           
 
@@ -3635,6 +1910,1838 @@
   </head>
   <body>
     <div id="root"></div>
+      <script>
+
+       // Global variables
+
+       let isFilterCollapsed = false;
+
+       let isColumnSelectorOpen = false;
+
+       let currentTheme = localStorage.getItem('theme') || 'light';
+
+       let currentAIIQ = parseInt(localStorage.getItem('aiIQ')) || 847;
+
+       let currentRevenuePotential = parseInt(localStorage.getItem('revenuePotential')) || 1247;
+
+
+       // Initialize AI IQ and Revenue Potential
+
+       document.getElementById('aiIqScore').textContent = currentAIIQ;
+
+       document.getElementById('revenuePotential').textContent = `+${currentRevenuePotential}₺`;
+
+
+
+       // Mobile sidebar toggle
+
+       function toggleMobileSidebar() {
+
+           document.getElementById('sidebar').classList.toggle('mobile-open');
+
+       }
+
+
+
+       // AI IQ Boost Animation
+
+       function boostAIIQ(points = 5) {
+
+           currentAIIQ += points;
+
+           localStorage.setItem('aiIQ', currentAIIQ);
+
+           
+
+           const badge = document.getElementById('aiIqBadge');
+
+           const scoreElement = document.getElementById('aiIqScore');
+
+           
+
+           // Update score
+
+           scoreElement.textContent = currentAIIQ;
+
+           
+
+           // Create boost animation
+
+           const boostElement = document.createElement('div');
+
+           boostElement.className = 'iq-boost';
+
+           boostElement.textContent = `+${points}`;
+
+           badge.appendChild(boostElement);
+
+           
+
+           // Remove boost element after animation
+
+           setTimeout(() => {
+
+               if (badge.contains(boostElement)) {
+
+                   badge.removeChild(boostElement);
+
+               }
+
+           }, 2000);
+
+           
+
+           // Trigger brain pulse animation
+
+           const brainIcon = badge.querySelector('.ai-brain-icon');
+
+           brainIcon.style.animation = 'none';
+
+           setTimeout(() => {
+
+               brainIcon.style.animation = 'pulse 2s ease-in-out infinite';
+
+           }, 10);
+
+       }
+
+
+
+       // Revenue Potential Update
+
+       function updateRevenuePotential(amount) {
+
+           currentRevenuePotential += amount;
+
+           localStorage.setItem('revenuePotential', currentRevenuePotential);
+
+           document.getElementById('revenuePotential').textContent = `+${currentRevenuePotential}₺`;
+
+           
+
+           // Show revenue notification
+
+           showRevenueNotification(`+${amount}₺ gelir potansiyeli eklendi!`);
+
+       }
+
+
+
+       // Show Revenue Notification
+
+       function showRevenueNotification(message) {
+
+           const notification = document.createElement('div');
+
+           notification.className = 'revenue-notification';
+
+           notification.innerHTML = `
+
+               <i class="fas fa-coins revenue-notification-icon"></i>
+
+               <div>${message}</div>
+
+           `;
+
+           
+
+           document.body.appendChild(notification);
+
+           
+
+           setTimeout(() => {
+
+               notification.style.animation = 'slideOutRight 0.3s ease-in';
+
+               setTimeout(() => {
+
+                   if (document.body.contains(notification)) {
+
+                       document.body.removeChild(notification);
+
+                   }
+
+               }, 300);
+
+           }, 3000);
+
+       }
+
+
+
+       // Revenue Boost Modal Functions
+
+       function openRevenueBoostModal(productSku) {
+
+           const modal = document.getElementById('revenueBoostModal');
+
+           const potentialAmount = document.getElementById('potentialAmount');
+
+           const missingFieldsList = document.getElementById('missingFieldsList');
+
+           
+
+           // Sample data based on product
+
+           const productData = {
+
+               'TSH-OVR-001-WHT-L': {
+
+                   potential: '+67₺',
+
+                   fields: [
+
+                       { name: 'Ürün Maliyet Fiyatı', impact: '+23₺/ay gelir artışı', type: 'critical' },
+
+                       { name: 'Kullanım Talimatları', impact: '%15 iade düşüşü', type: 'returns' },
+
+                       { name: 'Beden Rehberi', impact: '%25 iade düşüşü', type: 'returns' }
+
+                   ]
+
+               },
+
+               'IPH-15PM-256-TIT': {
+
+                   potential: '+23₺',
+
+                   fields: [
+
+                       { name: 'Teknik Özellikler', impact: '+23₺/ay gelir artışı', type: 'revenue' }
+
+                   ]
+
+               },
+
+               'COS-HYA-30-001': {
+
+                   potential: '-34₺',
+
+                   fields: [
+
+                       { name: 'Kullanım Talimatları', impact: '%35 iade düşüşü', type: 'critical' },
+
+                       { name: 'Ürün Avantajları', impact: '+45% dönüşüm artışı', type: 'revenue' },
+
+                       { name: 'Cilt Tipi Uygunluğu', impact: '%20 iade düşüşü', type: 'returns' },
+
+                       { name: 'Yan Etki Uyarıları', impact: '%15 iade düşüşü', type: 'returns' },
+
+                       { name: 'SSS & Cevapları', impact: '24/7 AI destek', type: 'support' }
+
+                   ]
+
+               }
+
+           };
+
+           
+
+           const data = productData[productSku] || productData['TSH-OVR-001-WHT-L'];
+
+           
+
+           potentialAmount.textContent = data.potential;
+
+           potentialAmount.style.color = data.potential.includes('-') ? 'var(--error-color)' : 'var(--revenue-color)';
+
+
+           missingFieldsList.innerHTML = data.fields.map(field => `
+
+               <div class="missing-field-item">
+
+                   <div class="missing-field-info">
+
+                       <div class="missing-field-name">${field.name}</div>
+
+                       <div class="missing-field-impact">${field.impact}</div>
+
+                   </div>
+
+                   <button class="quick-fill-btn" onclick="quickFillField('${field.name}', '${field.impact}')">
+
+                       <i class="fas fa-magic"></i>
+
+                       Hızlı Doldur
+
+                   </button>
+
+               </div>
+
+           `).join('');
+
+           
+
+           modal.classList.add('active');
+
+       }
+
+
+
+       function closeRevenueBoostModal() {
+
+           document.getElementById('revenueBoostModal').classList.remove('active');
+
+       }
+
+
+
+       function quickFillField(fieldName, impact) {
+
+           // Simulate AI filling the field
+
+           triggerConfetti();
+
+           boostAIIQ(10);
+
+           
+
+           // Extract revenue amount if present
+
+           const revenueMatch = impact.match(/\+(\d+)₺/);
+
+           if (revenueMatch) {
+
+               updateRevenuePotential(parseInt(revenueMatch[1]));
+
+           }
+
+           
+
+           closeRevenueBoostModal();
+
+           
+
+           setTimeout(() => {
+
+               showNotification(`${fieldName} AI tarafından dolduruldu! 🎉`, 'success');
+
+           }, 500);
+
+       }
+
+
+
+       function startQuickFill() {
+
+           // Simulate AI quick fill for all fields
+
+           triggerConfetti();
+
+           boostAIIQ(25);
+
+           updateRevenuePotential(67);
+
+           
+
+           closeRevenueBoostModal();
+
+           
+
+           setTimeout(() => {
+
+               showNotification('Tüm eksik bilgiler AI tarafından dolduruldu! 🚀', 'success');
+
+           }, 500);
+
+       }
+
+
+
+       // Enhanced Smart Field Creation
+
+       function createSmartField(fieldData) {
+
+           const impact = revenueImpactData[fieldData.key] || revenueImpactData.cost;
+
+           
+
+           return `
+
+               <div class="smart-field-container">
+
+                   <div class="smart-field-label">
+
+                       <label class="property-label">${fieldData.label} *</label>
+
+                       <div class="field-impact-badge ${impact.badge}">
+
+                           <i class="${impact.icon}"></i>
+
+                           ${impact.impact}
+
+                       </div>
+
+                   </div>
+
+                   <${fieldData.type || 'input'} 
+
+                       type="${fieldData.inputType || 'text'}" 
+
+                       class="smart-field-input ${impact.badge}" 
+
+                       placeholder="${fieldData.placeholder}"
+
+                       data-field="${fieldData.key}"
+
+                       onchange="handleSmartFieldChange(this, '${impact.impact}')"
+
+                       ${fieldData.type === 'textarea' ? 'rows="3"' : ''}
+
+                   ${fieldData.type === 'textarea' ? '></textarea>' : '>'}
+
+                   <div class="ai-suggestions-container" id="suggestions-${fieldData.key}">
+
+                       <div class="ai-suggestions-header">
+
+                           <i class="fas fa-brain"></i>
+
+                           AI Önerileri
+
+                       </div>
+
+                       <div class="ai-suggestions-list">
+
+                           ${fieldData.suggestions ? fieldData.suggestions.map(suggestion => `
+
+                               <div class="ai-suggestion-item" onclick="applySuggestion('${fieldData.key}', '${suggestion.text}', '${suggestion.impact}')">
+
+                                   <span>${suggestion.text}</span>
+
+                                   <span class="suggestion-impact">${suggestion.impact}</span>
+
+                               </div>
+
+                           `).join('') : ''}
+
+                       </div>
+
+                   </div>
+
+               </div>
+
+           `;
+
+       }
+
+
+
+       // Handle Smart Field Changes
+
+       function handleSmartFieldChange(field, impact) {
+
+           // Boost AI IQ based on field importance
+
+           const impactValue = impact.includes('₺') ? 5 : impact.includes('%') ? 3 : 2;
+
+           boostAIIQ(impactValue);
+
+           
+
+           // Show specific impact notification
+
+           setTimeout(() => {
+
+               showNotification(`${field.dataset.field} kaydedildi! ${impact}`, 'success');
+
+           }, 100);
+
+           
+
+           // Hide suggestions after filling
+
+           const suggestions = document.getElementById(`suggestions-${field.dataset.field}`);
+
+           if (suggestions) {
+
+               suggestions.classList.remove('active');
+
+           }
+
+       }
+
+
+
+       // Apply AI Suggestion
+
+       function applySuggestion(fieldKey, text, impact) {
+
+           const field = document.querySelector(`[data-field="${fieldKey}"]`);
+
+           if (field) {
+
+               field.value = text;
+
+               handleSmartFieldChange(field, impact);
+
+           }
+
+       }
+
+
+
+       // Show AI Suggestions on Focus
+
+       document.addEventListener('focusin', function(e) {
+
+           if (e.target.classList.contains('smart-field-input')) {
+
+               const fieldKey = e.target.dataset.field;
+
+               const suggestions = document.getElementById(`suggestions-${fieldKey}`);
+
+               if (suggestions && suggestions.querySelector('.ai-suggestion-item')) {
+
+                   suggestions.classList.add('active');
+
+               }
+
+           }
+
+       });
+
+
+
+       // Hide suggestions on focus out
+
+       document.addEventListener('focusout', function(e) {
+
+           if (e.target.classList.contains('smart-field-input')) {
+
+               setTimeout(() => {
+
+                   const fieldKey = e.target.dataset.field;
+
+                   const suggestions = document.getElementById(`suggestions-${fieldKey}`);
+
+                   if (suggestions) {
+
+                       suggestions.classList.remove('active');
+
+                   }
+
+               }, 200);
+
+           }
+
+       });
+
+
+
+       // Confetti Animation
+
+       function triggerConfetti() {
+
+           const container = document.getElementById('confettiContainer');
+
+           const colors = ['var(--primary-color)', 'var(--success-color)', 'var(--warning-color)', 'var(--accent-color)', 'var(--revenue-color)'];
+
+           
+
+           for (let i = 0; i < 50; i++) {
+
+               const piece = document.createElement('div');
+
+               piece.className = 'confetti-piece';
+
+               piece.style.left = Math.random() * 100 + 'vw';
+
+               piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+               piece.style.animationDelay = Math.random() * 0.5 + 's';
+
+               piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+
+               
+
+               container.appendChild(piece);
+
+               
+
+               // Remove piece after animation
+
+               setTimeout(() => {
+
+                   if (container.contains(piece)) {
+
+                       container.removeChild(piece);
+
+                   }
+
+               }, 4000);
+
+           }
+
+       }
+
+
+
+       // Smart Suggestion System - Enhanced
+
+       function showSmartSuggestion(content, field = null) {
+
+           const suggestion = document.getElementById('smartSuggestion');
+
+           const contentElement = document.getElementById('suggestionContent');
+
+           
+
+           contentElement.textContent = content;
+
+           suggestion.classList.add('active');
+
+           
+
+           // Store current field for later use
+
+           suggestion.dataset.currentField = field;
+
+       }
+
+
+
+       function acceptSuggestion() {
+
+           const suggestion = document.getElementById('smartSuggestion');
+
+           const field = suggestion.dataset.currentField;
+
+           
+
+           // Apply suggestion to field if specified
+
+           if (field) {
+
+               const fieldElement = document.querySelector(`[data-field="${field}"]`);
+
+               if (fieldElement) {
+
+                   fieldElement.value = document.getElementById('suggestionContent').textContent;
+
+                   handleSmartFieldChange(fieldElement, '+15₺ gelir artışı');
+
+               }
+
+           }
+
+           
+
+           // Boost AI IQ
+
+           boostAIIQ(5);
+
+           
+
+           // Close suggestion
+
+           suggestion.classList.remove('active');
+
+           
+
+           // Show brief success feedback
+
+           setTimeout(() => {
+
+               showNotification('AI önerisi kabul edildi! +5 IQ puanı', 'success');
+
+           }, 100);
+
+       }
+
+
+
+       function rejectSuggestion() {
+
+           const suggestion = document.getElementById('smartSuggestion');
+
+           suggestion.classList.remove('active');
+
+           
+
+           // Small IQ boost for engagement
+
+           boostAIIQ(1);
+
+           
+
+           showNotification('Geri bildirim için teşekkürler! +1 IQ puanı', 'info');
+
+       }
+
+
+       // Filter toggle
+
+       function toggleFilters() {
+
+           const content = document.getElementById('filterContent');
+
+           const toggle = document.querySelector('.filter-toggle');
+
+           
+
+           isFilterCollapsed = !isFilterCollapsed;
+
+           content.classList.toggle('collapsed', isFilterCollapsed);
+
+           toggle.classList.toggle('collapsed', isFilterCollapsed);
+
+       }
+
+
+
+       // Column selector toggle
+
+       function toggleColumnSelector() {
+
+           const dropdown = document.getElementById('columnDropdown');
+
+           isColumnSelectorOpen = !isColumnSelectorOpen;
+
+           dropdown.classList.toggle('active', isColumnSelectorOpen);
+
+       }
+
+
+
+       // Close dropdown when clicking outside
+
+       document.addEventListener('click', function(e) {
+
+           if (!e.target.closest('.column-selector')) {
+
+               document.getElementById('columnDropdown').classList.remove('active');
+
+               isColumnSelectorOpen = false;
+
+           }
+
+       });
+
+
+
+       // Column visibility toggle
+
+       document.querySelectorAll('.column-checkbox').forEach(checkbox => {
+
+           checkbox.addEventListener('change', function() {
+
+               const column = this.dataset.column;
+
+               const isVisible = this.checked;
+
+               
+
+               // Toggle column visibility
+
+               document.querySelectorAll(`[data-column="${column}"]`).forEach(cell => {
+
+                   cell.style.display = isVisible ? '' : 'none';
+
+               });
+
+           });
+
+       });
+
+
+
+       // Enhanced search functionality with AI suggestions
+
+       document.getElementById('searchInput').addEventListener('input', function(e) {
+
+           const searchTerm = e.target.value.toLowerCase();
+
+           const rows = document.querySelectorAll('.product-row');
+
+           
+
+           rows.forEach(row => {
+
+               const productName = row.querySelector('.product-name').textContent.toLowerCase();
+
+               const productSku = row.querySelector('.product-sku').textContent.toLowerCase();
+
+               
+
+               if (productName.includes(searchTerm) || productSku.includes(searchTerm)) {
+
+                   row.style.display = '';
+
+                   // Also show/hide variants row
+
+                   const variantsRow = row.nextElementSibling;
+
+                   if (variantsRow && variantsRow.classList.contains('product-variants')) {
+
+                       variantsRow.style.display = '';
+
+                   }
+
+               } else {
+
+                   row.style.display = 'none';
+
+                   // Also hide variants row
+
+                   const variantsRow = row.nextElementSibling;
+
+                   if (variantsRow && variantsRow.classList.contains('product-variants')) {
+
+                       variantsRow.style.display = 'none';
+
+                   }
+
+               }
+
+           });
+
+
+
+           // Show smart suggestion for popular searches
+
+           if (searchTerm.length > 3) {
+
+               const suggestions = [
+
+                   'Bu ürünler için toplu bilgi doldurma yapalım mı?',
+
+                   'Arama sonuçlarındaki ürünlerin gelir potansiyelini gösterayim mi?',
+
+                   'Bu ürün grubuna özel AI optimizasyonu önerim var!'
+
+               ];
+
+               
+
+               const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+               
+
+               setTimeout(() => {
+
+                   showSmartSuggestion(randomSuggestion);
+
+               }, 1000);
+
+           }
+
+       });
+
+
+
+       // Product variants toggle
+
+       function toggleVariants(productId) {
+
+           const variantsRow = document.getElementById(`variants-${productId}`);
+
+           const toggleBtn = event.target.closest('.variants-toggle');
+
+           
+
+           if (variantsRow.classList.contains('expanded')) {
+
+               variantsRow.classList.remove('expanded');
+
+               toggleBtn.classList.remove('expanded');
+
+           } else {
+
+               // Close all other expanded variants
+
+               document.querySelectorAll('.product-variants.expanded').forEach(row => {
+
+                   row.classList.remove('expanded');
+
+               });
+
+               document.querySelectorAll('.variants-toggle.expanded').forEach(btn => {
+
+                   btn.classList.remove('expanded');
+
+               });
+
+               
+
+               // Open this variant
+
+               variantsRow.classList.add('expanded');
+
+               toggleBtn.classList.add('expanded');
+
+           }
+
+       }
+
+
+
+       // Enhanced Properties Modal with Smart Fields
+
+       function openPropertiesModal(category, sku) {
+
+           const modal = document.getElementById('propertiesModal');
+
+           const content = document.getElementById('propertiesContent');
+
+           
+
+           // Generate category-specific smart properties
+
+           content.innerHTML = generateSmartPropertiesContent(category, sku);
+
+           modal.classList.add('active');
+
+           
+
+           // Add AI suggestion functionality
+
+           setTimeout(initializeSmartFields, 500);
+
+       }
+
+
+
+       function closePropertiesModal() {
+
+           document.getElementById('propertiesModal').classList.remove('active');
+
+       }
+
+
+
+       function initializeSmartFields() {
+
+           // Auto-show suggestions for empty fields
+
+           document.querySelectorAll('.smart-field-input').forEach(field => {
+
+               if (!field.value) {
+
+                   field.addEventListener('focus', function() {
+
+                       setTimeout(() => {
+
+                           const suggestions = document.getElementById(`suggestions-${field.dataset.field}`);
+
+                           if (suggestions) {
+
+                               suggestions.classList.add('active');
+
+                           }
+
+                       }, 500);
+
+                   });
+
+               }
+
+           });
+
+       }
+
+
+
+       // Generate enhanced properties content with smart fields
+
+       function generateSmartPropertiesContent(category, sku) {
+
+           let content = '';
+
+           
+
+           // Enhanced required fields section with specific impacts
+
+           content += `
+
+               <div class="required-fields-section">
+
+                   <div class="required-header">
+
+                       <div class="required-icon">
+
+                           <i class="fas fa-coins"></i>
+
+                       </div>
+
+                       <div class="required-title">Gelir Artışı için Kritik Bilgiler</div>
+
+                   </div>
+
+                   <div class="required-description">
+
+                       <p><strong>Bu bilgileri doldurarak aylık gelirinizi artırın!</strong></p>
+
+                       <p>Her alan farklı şekilde gelirinizi, iade oranınızı ve müşteri memnuniyetinizi etkiler.</p>
+
+                       <div class="required-stats">
+
+                           <div class="required-stat">
+
+                               <div class="required-stat-value">+234₺</div>
+
+                               <div class="required-stat-label">Aylık Gelir Artışı</div>
+
+                           </div>
+
+                           <div class="required-stat">
+
+                               <div class="required-stat-value">-25%</div>
+
+                               <div class="required-stat-label">İade Azalışı</div>
+
+                           </div>
+
+                           <div class="required-stat">
+
+                               <div class="required-stat-value">24/7</div>
+
+                               <div class="required-stat-label">AI Müşteri Desteği</div>
+
+                           </div>
+
+                           <div class="required-stat">
+
+                               <div class="required-stat-value">+67%</div>
+
+                               <div class="required-stat-label">Sipariş Artışı</div>
+
+                           </div>
+
+                       </div>
+
+                   </div>
+
+           `;
+
+
+
+           // Smart fields with specific impact indicators
+
+           const smartFields = [
+
+               {
+
+                   key: 'cost',
+
+                   label: 'Ürün Maliyet Fiyatı (₺)',
+
+                   inputType: 'number',
+
+                   placeholder: '0.00',
+
+                   suggestions: [
+
+                       { text: '45.00', impact: '+23₺' },
+
+                       { text: '52.50', impact: '+28₺' },
+
+                       { text: '38.75', impact: '+19₺' }
+
+                   ]
+
+               },
+
+               {
+
+                   key: 'usage',
+
+                   label: 'Ürün Kullanım Amacı/Hedef Kitle',
+
+                   placeholder: 'Örn: Günlük kullanım için genç kadınlar',
+
+                   suggestions: [
+
+                       { text: 'Günlük kullanım için 18-35 yaş arası kadınlar', impact: '+34₺' },
+
+                       { text: 'Rahat ve şık görünmek isteyen çalışan kadınlar', impact: '+29₺' },
+
+                       { text: 'Spor ve günlük aktiviteler için uygun', impact: '+25₺' }
+
+                   ]
+
+               },
+
+               {
+
+                   key: 'faq',
+
+                   label: 'Sık Sorulan Sorular & Cevapları',
+
+                   type: 'textarea',
+
+                   placeholder: 'Örn: S: Kumaş kalınlığı nasıl? C: Orta kalınlıkta, 4 mevsim kullanılabilir',
+
+                   suggestions: [
+
+                       { text: 'S: Çok ince mi? C: Hayır, orta kalınlık, dayanıklı\nS: Renkler solur mu? C: Yıkama talimatlarına uyulursa solmaz', impact: '24/7' },
+
+                       { text: 'S: Bedeni büyük gelir mi? C: Normal beden, oversize model\nS: Ütülemek gerekir mi? C: Düşük ısıda ütülenebilir', impact: '24/7' }
+
+                   ]
+
+               },
+
+               {
+
+                   key: 'advantages',
+
+                   label: 'Ürün Avantajları/Öne Çıkan Özellikler',
+
+                   type: 'textarea',
+
+                   placeholder: 'Örn: %100 pamuk, çok yumuşak, kolay ütülenir',
+
+                   suggestions: [
+
+                       { text: '%100 pamuk, nefes alabilir, anti-alerjik, yumuşak dokulu', impact: '+67%' },
+
+                       { text: 'Oversize kesim, rahat hareket, çok yumuşak, renk solmaz', impact: '+45%' }
+
+                   ]
+
+               },
+
+               {
+
+                   key: 'instructions',
+
+                   label: 'Kullanım Talimatları/Uyarılar',
+
+                   type: 'textarea',
+
+                   placeholder: 'Örn: 30°C\'de yıkayın, çamaşır suyu kullanmayın',
+
+                   suggestions: [
+
+                       { text: '30°C\'de yıkayın, çamaşır suyu kullanmayın, düşük ısıda ütüleyin', impact: '%15' },
+
+                       { text: 'Ters çevirerek yıkayın, asarak kurutun, kimyasal kullanmayın', impact: '%12%' }
+
+                   ]
+
+               }
+
+           ];
+
+
+
+           smartFields.forEach(field => {
+
+               content += createSmartField(field);
+
+           });
+
+
+
+           content += `</div>`;
+
+
+
+           // Category specific fields
+
+           switch(category) {
+
+               case 'moda':
+
+                   content += `
+
+                       <div class="properties-grid">
+
+                           <div class="property-category">
+
+                               <div class="category-header">
+
+                                   <div class="category-icon">
+
+                                       <i class="fas fa-tshirt"></i>
+
+                                   </div>
+
+                                   <div class="category-name">Moda Özel Bilgileri</div>
+
+                               </div>
+
+                               <div class="property-list">
+
+                                   ${createSmartField({
+
+                                       key: 'sizeGuide',
+
+                                       label: 'Beden/Ölçü Rehberi',
+
+                                       type: 'textarea',
+
+                                       placeholder: 'Örn: Model 175cm/58kg, M beden kullanıyor. Oversize kesim',
+
+                                       suggestions: [
+
+                                           { text: 'Model 175cm/58kg, M beden kullanıyor. Oversize kesim, rahat.', impact: '%25' },
+
+                                           { text: 'XS(34): Göğüs 84cm, S(36): 88cm, M(38): 92cm - Oversize model', impact: '%20%' }
+
+                                       ]
+
+                                   })}
+
+                                   ${createSmartField({
+
+                                       key: 'differences',
+
+                                       label: 'Rakip Ürünlerle Farkları',
+
+                                       placeholder: 'Örn: Daha kaliteli dikişler, daha uzun ömürlü',
+
+                                       suggestions: [
+
+                                           { text: 'Daha kaliteli dikişler, %100 pamuk, çok yumuşak', impact: '+45%' },
+
+                                           { text: 'Premium kumaş, dayanıklı, renkler solmaz, rahat kesim', impact: '+52%' }
+
+                                       ]
+
+                                   })}
+
+                               </div>
+
+                           </div>
+
+                       </div>`;
+
+                   break;
+
+                   
+
+               case 'kozmetik':
+
+                   content += `
+
+                       <div class="properties-grid">
+
+                           <div class="property-category">
+
+                               <div class="category-header">
+
+                                   <div class="category-icon">
+
+                                       <i class="fas fa-heart"></i>
+
+                                   </div>
+
+                                   <div class="category-name">Kozmetik Özel Bilgileri</div>
+
+                               </div>
+
+                               <div class="property-list">
+
+                                   ${createSmartField({
+
+                                       key: 'skinType',
+
+                                       label: 'Cilt Tipi Uygunluğu',
+
+                                       placeholder: 'Örn: Tüm cilt tiplerinde kullanılabilir',
+
+                                       suggestions: [
+
+                                           { text: 'Tüm cilt tiplerinde kullanılabilir, hassas ciltler dahil', impact: '%20' },
+
+                                           { text: 'Yağlı ve karma ciltler için özellikle uygun', impact: '%15%' }
+
+                                       ]
+
+                                   })}
+
+                                   ${createSmartField({
+
+                                       key: 'sideEffects',
+
+                                       label: 'Yan Etki Uyarıları',
+
+                                       type: 'textarea',
+
+                                       placeholder: 'Örn: İlk kullanımda test yapın, gözle temasından kaçının',
+
+                                       suggestions: [
+
+                                           { text: 'İlk kullanımda küçük alanda test yapın. Gözle temasından kaçının.', impact: '%15' }
+
+                                       ]
+
+                                   })}
+
+                               </div>
+
+                           </div>
+
+                       </div>`;
+
+                   break;
+
+           }
+
+
+
+           content += `
+
+               <div style="margin-top: 32px; display: flex; gap: 16px; justify-content: flex-end; padding-top: 24px; border-top: 2px solid var(--neutral-200);">
+
+                   <button class="btn btn-secondary" onclick="closePropertiesModal()">
+
+                       <i class="fas fa-times"></i>
+
+                       İptal
+
+                   </button>
+
+                   <button class="btn btn-secondary" onclick="triggerAISuggestions()">
+
+                       <i class="fas fa-magic"></i>
+
+                       AI ile Otomatik Doldur
+
+                   </button>
+
+                   <button class="btn btn-primary" onclick="saveSmartProperties()">
+
+                       <i class="fas fa-coins"></i>
+
+                       Kaydet ve Geliri Artır
+
+                   </button>
+
+               </div>`;
+
+           
+
+           return content;
+
+       }
+
+
+
+       // Save properties with enhanced celebration
+
+       function saveSmartProperties() {
+
+           // Count filled fields
+
+           const filledFields = document.querySelectorAll('.smart-field-input').length;
+
+           const revenueBoost = filledFields * 12; // Estimate 12₺ per field
+
+           
+
+           // Trigger confetti
+
+           triggerConfetti();
+
+           
+
+           // Major AI IQ boost
+
+           boostAIIQ(25);
+
+           
+
+           // Update revenue potential
+
+           updateRevenuePotential(revenueBoost);
+
+           
+
+           // Close modal
+
+           closePropertiesModal();
+
+           
+
+           // Show success notification
+
+           setTimeout(() => {
+
+               showNotification(`Ürün bilgileri kaydedildi! +${revenueBoost}₺ aylık gelir artışı! 🎉`, 'success');
+
+           }, 500);
+
+       }
+
+
+
+       // Trigger AI suggestions for all fields
+
+       function triggerAISuggestions() {
+
+           const suggestions = [
+
+               'Bu ürün genç kadınlar için günlük kullanım amacıyla tasarlanmış görünüyor',
+
+               'Premium kalite segmentinde yer alıyor, avantajlarını vurgulamalısınız',
+
+               '4 mevsim kullanılabilir özellikler taşıyor',
+
+               'Kullanım talimatları iade oranını %25 azaltabilir'
+
+           ];
+
+           
+
+           const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+           showSmartSuggestion(randomSuggestion);
+
+           
+
+           // Boost AI IQ for using AI suggestions
+
+           boostAIIQ(7);
+
+       }
+
+
+
+       // Help Modal functions (same as original)
+
+       function openHelpModal(type) {
+
+           const modal = document.getElementById('helpModal');
+
+           const content = document.getElementById('helpContent');
+
+           
+
+           const helpData = {
+
+               'urun-aciklama': {
+
+                   icon: 'fas fa-file-alt',
+
+                   title: 'Ürün Açıklaması Tamamlanma',
+
+                   description: 'Bu metrik, ürünlerinizin açıklama alanlarının ne kadar detaylı ve eksiksiz doldurulduğunu gösterir. Turkwise AI, eksik açıklamaları tespit ederek otomatik olarak SEO uyumlu ve satış odaklı açıklamalar oluşturur. Yüksek tamamlanma oranı, daha iyi arama sonuçları ve müşteri deneyimi sağlar.'
+
+               },
+
+               'gorsel-optimizasyon': {
+
+                   icon: 'fas fa-image',
+
+                   title: 'Görsel Optimizasyonu',
+
+                   description: 'Ürün görsellerinizin kalitesi, boyutu ve SEO uyumluluğunu değerlendirir. Turkwise AI, görsel kalitesi düşük olan ürünleri tespit eder ve iyileştirme önerileri sunar. Optimized görseller daha yüksek tıklama oranları ve dönüşüm sağlar.'
+
+               },
+
+               'seo-optimizasyon': {
+
+                   icon: 'fas fa-search',
+
+                   title: 'SEO Optimizasyonu',
+
+                   description: 'Ürün başlıklarınızın ve açıklamalarınızın arama motorları için ne kadar optimize edildiğini gösterir. Turkwise AI, popüler anahtar kelimeleri analiz ederek ürünlerinizin daha kolay bulunmasını sağlar. Bu metrik arttıkça organik trafik artışı yaşarsınız.'
+
+               },
+
+               'kategori-ozellikleri': {
+
+                   icon: 'fas fa-tags',
+
+                   title: 'Kategori Özellikleri',
+
+                   description: 'Her kategori için özel tanımlanmış ürün özelliklerinin doldurulma oranını gösterir. Örneğin moda ürünleri için beden, renk, kumaş bilgileri gibi. Bu bilgiler müşteri deneyimini artırır ve AI\'nın daha doğru öneriler yapmasını sağlar.'
+
+               },
+
+               'fiyat-optimizasyon': {
+
+                   icon: 'fas fa-dollar-sign',
+
+                   title: 'Fiyat Optimizasyonu',
+
+                   description: 'Ürün fiyatlarınızın pazar koşullarına ve rakip analizine göre ne kadar optimize edildiğini gösterir. Turkwise AI, dinamik fiyatlandırma ile en uygun fiyat stratejisini belirler ve satış potansiyelinizi maksimize eder.'
+
+               },
+
+               'genel-ai-skor': {
+
+                   icon: 'fas fa-brain',
+
+                   title: 'Genel AI Skoru',
+
+                   description: 'Tüm AI optimizasyon kriterlerinin genel ortalamasını gösteren kapsamlı bir performans skoru. Bu skor yükseldikçe ürünlerinizin pazaryerlerinde daha iyi performans göstermesi beklenir. 90+ skor mükemmel optimizasyon seviyesini ifade eder.'
+
+               }
+
+           };
+
+
+
+           const data = helpData[type];
+
+           if (data) {
+
+               content.innerHTML = `
+
+                   <div class="help-icon-large">
+
+                       <i class="${data.icon}"></i>
+
+                   </div>
+
+                   <div class="help-title">${data.title}</div>
+
+                   <div class="help-description">${data.description}</div>
+
+               `;
+
+               modal.classList.add('active');
+
+           }
+
+       }
+
+
+
+       function closeHelpModal() {
+
+           document.getElementById('helpModal').classList.remove('active');
+
+       }
+
+
+
+       // Close modals when clicking outside
+
+       document.addEventListener('click', function(e) {
+
+           if (e.target.classList.contains('modal') || e.target.classList.contains('revenue-boost-modal')) {
+
+               e.target.classList.remove('active');
+
+           }
+
+           
+
+           if (e.target.classList.contains('smart-suggestion')) {
+
+               e.target.classList.remove('active');
+
+           }
+
+       });
+
+
+
+       // Filter functionality (enhanced with revenue potential)
+
+       function applyFilters() {
+
+           const categoryFilter = document.getElementById('categoryFilter').value;
+
+           const stockFilter = document.getElementById('stockFilter').value;
+
+           const aiScoreFilter = document.getElementById('aiScoreFilter').value;
+
+           const revenueFilter = document.getElementById('revenueFilter').value;
+
+           const missingInfoFilter = document.getElementById('missingInfoFilter').value;
+
+           
+
+           const rows = document.querySelectorAll('.product-row');
+
+           
+
+           rows.forEach(row => {
+
+               let shouldShow = true;
+
+               
+
+               // Apply category filter
+
+               if (categoryFilter) {
+
+                   const categoryBadge = row.querySelector('.category-badge').textContent.toLowerCase();
+
+                   if (!categoryBadge.includes(categoryFilter)) {
+
+                       shouldShow = false;
+
+                   }
+
+               }
+
+               
+
+               // Apply revenue potential filter
+
+               if (revenueFilter && shouldShow) {
+
+                   const revenueText = row.querySelector('[data-column="revenue-potential"]').textContent;
+
+                   const revenueValue = parseInt(revenueText.match(/\d+/) || [0]);
+
+                   
+
+                   switch(revenueFilter) {
+
+                       case 'high':
+
+                           if (revenueValue < 50) shouldShow = false;
+
+                           break;
+
+                       case 'medium':
+
+                           if (revenueValue < 10 || revenueValue >= 50) shouldShow = false;
+
+                           break;
+
+                       case 'low':
+
+                           if (revenueValue >= 10) shouldShow = false;
+
+                           break;
+
+                   }
+
+               }
+
+               
+
+               // Apply missing info filter
+
+               if (missingInfoFilter && shouldShow) {
+
+                   const hasCritical = row.classList.contains('missing-critical-info');
+
+                   const hasRevenue = row.classList.contains('revenue-opportunity');
+
+                   
+
+                   switch(missingInfoFilter) {
+
+                       case 'critical':
+
+                           if (!hasCritical) shouldShow = false;
+
+                           break;
+
+                       case 'revenue':
+
+                           if (!hasRevenue) shouldShow = false;
+
+                           break;
+
+                   }
+
+               }
+
+               
+
+               row.style.display = shouldShow ? '' : 'none';
+
+               // Also hide/show variants
+
+               const variantsRow = row.nextElementSibling;
+
+               if (variantsRow && variantsRow.classList.contains('product-variants')) {
+
+                   variantsRow.style.display = shouldShow ? '' : 'none';
+
+               }
+
+           });
+
+
+
+           // Boost AI IQ for using filters
+
+           boostAIIQ(2);
+
+       }
+
+
+
+       // Add event listeners to all filters
+
+       document.querySelectorAll('#categoryFilter, #stockFilter, #aiScoreFilter, #revenueFilter, #missingInfoFilter, #updateFilter').forEach(filter => {
+
+           filter.addEventListener('change', applyFilters);
+
+       });
+
+
+
+       // Marketplace checkbox handling
+
+       document.querySelectorAll('.marketplace-checkbox').forEach(checkbox => {
+
+           checkbox.addEventListener('change', function() {
+
+               if (!this.disabled) {
+
+                   this.closest('.marketplace-option').classList.toggle('active', this.checked);
+
+                   
+
+                   // Boost AI IQ for marketplace selection
+
+                   boostAIIQ(3);
+
+               }
+
+           });
+
+       });
+
+
+
+       // Notification system
+
+       function showNotification(message, type = 'info') {
+
+           const notification = document.createElement('div');
+
+           notification.className = `notification ${type}`;
+
+           notification.style.cssText = `
+
+               position: fixed;
+
+               top: 80px;
+
+               right: 20px;
+
+               padding: 16px 24px;
+
+               background: ${type === 'success' ? 'var(--success-color)' : 'var(--primary-color)'};
+
+               color: white;
+
+               border-radius: 12px;
+
+               box-shadow: var(--shadow-lg);
+
+               z-index: 3000;
+
+               font-weight: 600;
+
+               animation: slideInRight 0.3s ease-out;
+
+               max-width: 300px;
+
+           `;
+
+           notification.textContent = message;
+
+           
+
+           document.body.appendChild(notification);
+
+           
+
+           setTimeout(() => {
+
+               notification.style.animation = 'slideOutRight 0.3s ease-in';
+
+               setTimeout(() => {
+
+                   if (document.body.contains(notification)) {
+
+                       document.body.removeChild(notification);
+
+                   }
+
+               }, 300);
+
+           }, 3000);
+
+       }
+
+
+
+       // Initialize animations
+
+       document.addEventListener('DOMContentLoaded', function() {
+
+           // Animate stat progress bars
+
+           setTimeout(() => {
+
+               document.querySelectorAll('.stat-progress-fill, .ai-score-fill').forEach(fill => {
+
+                   const width = fill.style.width;
+
+                   fill.style.width = '0%';
+
+                   
+
+                   setTimeout(() => {
+
+                       fill.style.width = width;
+
+                   }, 100);
+
+               });
+
+           }, 500);
+
+
+
+           // Random AI suggestions with revenue focus
+
+           setTimeout(() => {
+
+               if (Math.random() > 0.6) {
+
+                   const suggestions = [
+
+                       'Maliyet bilgilerini ekleyerek bu ay +347₺ gelir artışı sağlayabilirsiniz!',
+
+                       'Kullanım talimatları ekleyen satıcılar iade oranlarını %23 azaltıyor!',
+
+                       'Bu hafta bilgi dolduran kullanıcılar ortalama +189₺ gelir artışı yaşadı!',
+
+                       '5 dakikada doldurulabilecek 3 alan var - +67₺ gelir potansiyeli!'
+
+                   ];
+
+                   
+
+                   const randomSuggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+
+                   setTimeout(() => {
+
+                       showSmartSuggestion(randomSuggestion);
+
+                   }, 2000);
+
+               }
+
+           }, 5000);
+
+
+
+           // Update revenue tracker periodically
+
+           setInterval(() => {
+
+               if (Math.random() > 0.8) {
+
+                   const currentAmount = parseInt(document.getElementById('revenuePotential').textContent.replace(/[^\d]/g, ''));
+
+                   const newAmount = currentAmount + Math.floor(Math.random() * 15) + 5;
+
+                   document.getElementById('revenuePotential').textContent = `+${newAmount}₺`;
+
+               }
+
+           }, 30000);
+
+       });
+
+   </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

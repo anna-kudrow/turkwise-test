@@ -10,7 +10,6 @@ function App() {
       <DashboardLayout>
         <InventoryPage />
       </DashboardLayout>
-
       {/* <!-- Confetti Animation Container --> */}
       <div id="confettiContainer" className="confetti-container"></div>
       {/* <!-- Smart Suggestion Popup --> */}
